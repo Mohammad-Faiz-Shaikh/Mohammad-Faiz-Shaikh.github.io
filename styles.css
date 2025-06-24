@@ -1,0 +1,460 @@
+/* === BASE STYLES === */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  scroll-behavior: smooth;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar {
+  background: #111;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: #00e6e6;
+}
+
+section {
+  padding: 100px 20px;
+  margin-top: 50px;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.3s, color 0.3s;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUpSection 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInUpSection {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.project-card {
+  background: #f4f4f4;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+form input, form textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.7rem;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #3498db;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+i {
+  margin-right: 8px;
+  color: #3498db;
+}
+
+/* === SECTION BACKGROUNDS === */
+#about { background-color: #f9f9f9; }
+#skills { background-color: #ffffff; }
+#projects { background-color: #f9f9f9; }
+#education { background-color: #ffffff; }
+#certifications { background-color: #f9f9f9; }
+#contact { background-color: #ffffff; }
+
+/* === CARD STYLE === */
+.card {
+  background: #f4f4f4;
+  padding: 2rem;
+  margin: 1rem auto;
+  border-radius: 10px;
+  max-width: 1000px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* === RESPONSIVE STYLES === */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav#nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav#nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  nav a, #mode-toggle {
+    margin: 0.5rem 1rem;
+  }
+}
+
+/* === DARK MODE === */
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode section {
+  background-color: transparent;
+  color: #e0e0e0;
+  border-color: #2e2e2e;
+}
+
+.dark-mode section h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode p {
+  color: #f1f1f1;
+}
+
+.dark-mode .navbar {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.dark-mode nav a {
+  color: #e0e0e0;
+}
+
+.dark-mode nav a:hover {
+  color: #00e6e6;
+}
+
+.dark-mode .project-card,
+.dark-mode .card {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  color: #e0e0e0;
+}
+
+.dark-mode input,
+.dark-mode textarea {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border: 1px solid #444;
+}
+
+.dark-mode button {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.dark-mode a {
+  color: #4fc3f7;
+}
+
+.dark-mode footer {
+  background-color: #1a1a1a;
+  color: #ccc;
+}
+
+/* === FOOTER === */
+#footer {
+  text-align: center;
+  padding: 2rem;
+  background: #111;
+  color: white;
+  font-size: 0.95rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode #footer {
+  background: #1a1a1a;
+  color: #ccc;
+}
+
+/* === TYPOGRAPHY FIXES === */
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode p,
+.dark-mode li,
+.dark-mode ul,
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode form label {
+  color: #e0e0e0 !important;
+}
+
+.dark-mode #about,
+.dark-mode #skills,
+.dark-mode #projects,
+.dark-mode #education,
+.dark-mode #certifications,
+.dark-mode #contact {
+  background-color: #181818 !important;
+}
+
+.dark-mode .hamburger,
+.dark-mode #mode-toggle {
+  color: #ffffff !important;
+}
+
+/* === HERO SECTION === */
+.hero-content {
+  padding-top: 80px;
+  height: 100vh;
+  background: linear-gradient(135deg, #3498db, #2ecc71);
+ /* darker blue & green */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  animation: fadeInUpSection 1s ease-out forwards;
+}
+
+.dark-mode .hero-content {
+  background: linear-gradient(135deg, #1e7e50, #1f4e79) !important;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.3rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  color: #e0e0e0;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.primary-btn {
+  background-color: #ffffff;
+  color: #3498db;
+}
+
+.primary-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.secondary-btn {
+  background-color: #000;
+  color: white;
+  border: none;
+}
+
+.secondary-btn:hover {
+  background-color: #333;
+}
+
+.highlight {
+  color: #ffe600;
+}
+
+.typing-text {
+  font-size: 1.4rem;
+  font-weight: bold;
+  white-space: nowrap;
+  border-right: 2px solid white;
+  width: 0;
+  overflow: hidden;
+  animation: typing 4s steps(40, end) forwards, blink 0.7s step-end infinite;
+  margin-bottom: 1rem;
+  font-family: 'Monotype Corsiva', cursive;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+.hero-text {
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1 }
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+.highlighted-text {
+  font-family: 'Segoe UI', sans-serif;
+}
+.profile-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  border: 4px solid white;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 20px rgba(46, 204, 113, 0.7); /* light mode green glow */
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
+}
+
+/* Dark Mode Profile Photo Shadow */
+.dark-mode .profile-photo {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.7); /* cool cyan glow for dark mode */
+  border: 4px solid #2ecc71;
+}
+.skill-bar {
+  margin: 1rem 0;
+}
+
+.skill-bar span {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.bar {
+  background: #ddd;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+  border-radius: 10px;
+  transition: width 1s ease-in-out;
+}
+.card img:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+.certificate-img {
+  width: 200px; /* adjust as needed */
+  max-width: 90%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto 1rem;
+  transition: transform 0.3s ease;
+}
+
+.certificate-img:hover {
+  transform: scale(1.02);
+}
+.signature {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #aaa;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.signature i {
+  color: #e74c3c;
+  animation: pulse 1.5s infinite;
+  margin: 0 4px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.7; }
+}
+
