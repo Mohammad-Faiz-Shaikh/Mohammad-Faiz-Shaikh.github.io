@@ -5,6 +5,7 @@ body {
   scroll-behavior: smooth;
   transition: background-color 0.3s, color 0.3s;
   padding-top: 80px; /* To prevent overlap with fixed navbar */
+  background: transparent;
 }
 
 .navbar {
@@ -41,6 +42,12 @@ section {
   transform: translateY(30px);
   animation: fadeInUpSection 0.8s ease-out forwards;
   animation-delay: 0.2s;
+   background-color: rgba(255, 255, 255, 0.9); /* Light mode */
+  backdrop-filter: blur(5px);
+  border-radius: 8px;
+  margin: 20px auto;
+  padding: 40px 20px;
+  max-width: 1000px;
 }
 
 @keyframes fadeInUpSection {
@@ -169,6 +176,7 @@ i {
   background-color: transparent;
   color: #e0e0e0;
   border-color: #2e2e2e;
+  background-color: rgba(20, 20, 20, 0.9);
 }
 
 .dark-mode section h2,
@@ -447,4 +455,41 @@ i {
   0% { transform: scale(1); opacity: 0.7; }
   50% { transform: scale(1.2); opacity: 1; }
   100% { transform: scale(1); opacity: 0.7; }
+}
+#hero {
+  position: relative;
+  overflow: hidden;
+}
+
+#hero canvas {
+  position: absolute;
+  top: 0; left: 0;
+  z-index: 0;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+}
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Push behind everything */
+  background: #ffffff; /* Optional: fallback background */
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+}
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Send it to background */
 }
